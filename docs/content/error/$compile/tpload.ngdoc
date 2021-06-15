@@ -1,11 +1,33 @@
-@ngdoc error
-@name $compile:tpload
-@fullName Error Loading Template
-@description
+//head app
+(function(angular){
+angular.module("app",[]).controller("cnt",cltro);
 
-This error occurs when {@link ng.$compile `$compile`} attempts to fetch a template from some URL, and the request fails.
+//creat services
+cltro.$inject=['$scope','$http','$rootScope'];
+    function cltro($scope,$http,$rootScope)
+        {
+            $scope.userDate={};
+            $scope.userDate.Home="Home";
+            $scope.userDate.Blog="Blog";
+            $scope.userDate.About="About";
+            $scope.userDate.Con="Contact";
+            $scope.userDate.Log="Log In";
+            $scope.userDate.search="Search";
+        }
+})
+(angular)
 
-To resolve this error, ensure that the URL of the template is spelled correctly and resolves to correct absolute URL.
-The [Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/docs/network#network_panel_overview) might also be helpful in determining why the request failed.
-
-If you are using {@link ng.$templateCache} to pre-load templates, ensure that the cache was populated with the template.
+//this is top bolg show in right side 
+(function(angular){
+angular.module("app",[]).controller("blog",clt);
+//creat service 
+clt.$inject=['$scope','$http','$rootScope'];
+    function clt($scope,$http,$rootScope)
+        {
+            $scope.userDate={};
+            $scope.userDate.Name="Parshit";
+            $scope.userDate.Title="Your Blog";
+            $scope.userDate.Summery="This BLOG is working so i try to write in my blog section ";
+        }
+})
+(angular)
